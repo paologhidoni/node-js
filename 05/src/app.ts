@@ -15,6 +15,10 @@ app.use((req, res, next) => {
 app.use(adminRoutes);
 // Shop routes
 app.use(shopRoutes);
+// Error page
+app.use((req, res) => {
+  res.status(404).send("<h1>Page not found</h1>");
+});
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
