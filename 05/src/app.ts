@@ -12,7 +12,7 @@ app.use((req, res, next) => {
 });
 
 // Admin routes
-app.use(adminRoutes);
+app.use("/admin", adminRoutes);
 // Shop routes
 app.use(shopRoutes);
 // Error page
