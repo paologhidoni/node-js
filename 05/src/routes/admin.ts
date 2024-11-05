@@ -1,11 +1,10 @@
 import express from "express";
+import path from "path";
 const router = express.Router();
 
 // /admin/add-product => GET
 router.get("/add-product", (req, res, next) => {
-  res.send(
-    "<h1>Add product</h1><form action='/admin/add-product' method='POST'><input type='text' name='title'><button type='submit'>Add</button></form>"
-  );
+  res.sendFile(path.join(__dirname, "../../src", "views", "add-product.html"));
 });
 
 // /admin/add-product => POST

@@ -1,10 +1,13 @@
 import express, { Application } from "express";
+import path from "path";
+import bodyParser from "body-parser";
 import adminRoutes from "./routes/admin";
 import shopRoutes from "./routes/shop";
 
 const app: Application = express();
 
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "../src/", "public"))); // get access to static content
 
 app.use((req, res, next) => {
   console.log("First middleware, this always runs!");
@@ -17,7 +20,7 @@ app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 // Error page
 app.use((req, res) => {
-  res.status(404).send("<h1>Page not found</h1>");
+  res.status(404).sendFile(path.join(__dirname, "../src", "views", "404.html"));
 });
 
 app.listen(3000, () => {

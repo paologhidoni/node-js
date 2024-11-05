@@ -1,10 +1,9 @@
 import express from "express";
+import path from "path";
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-  res.send(
-    "<h1>First page yeah!</h1><h2>Click to add a product</h2><a href='/add-product'><button>Add a product</button></a>"
-  );
+  res.sendFile(path.join(__dirname, "../../src", "views", "shop.html"));
 });
 
 export default router;
