@@ -5,7 +5,10 @@ const products: Record<string, any>[] = [];
 
 // /admin/add-product => GET
 adminRoutes.get("/add-product", (req, res, next) => {
-  res.sendFile(path.join(__dirname, "../../src", "views", "add-product.html"));
+  // res.sendFile(path.join(__dirname, "../../src", "views", "add-product.html"));
+
+  // pug
+  res.render("add-product", { docTitle: "Add Product" });
 });
 
 // /admin/add-product => POST
