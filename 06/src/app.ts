@@ -28,7 +28,7 @@ app.use((req, res) => {
   // res.status(404).sendFile(path.join(__dirname, "../src", "views", "404.html"));
 
   // pug
-  res.render("404", { docTitle: "Page Not Found" });
+  res.render("404", { pageTitle: "Page Not Found" });
 });
 
 app.listen(3000, () => {

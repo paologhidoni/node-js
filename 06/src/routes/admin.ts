@@ -8,7 +8,10 @@ adminRoutes.get("/add-product", (req, res, next) => {
   // res.sendFile(path.join(__dirname, "../../src", "views", "add-product.html"));
 
   // pug
-  res.render("add-product", { docTitle: "Add Product" });
+  res.render("add-product", {
+    pageTitle: "Add Product",
+    path: "/admin/add-product",
+  });
 });
 
 // /admin/add-product => POST

@@ -10,7 +10,7 @@ router.get("/", (req, res, next) => {
   /* pug
   The first arguments is which template will be rendered,
   the second is the data we are passing to that template */
-  res.render("shop", { docTitle: "Shop", prods: products });
+  res.render("shop", { pageTitle: "Shop", prods: products, path: "shop" });
 });
 
 export default router;
