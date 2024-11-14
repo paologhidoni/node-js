@@ -11,6 +11,9 @@ adminRoutes.get("/add-product", (req, res, next) => {
   res.render("add-product", {
     pageTitle: "Add Product",
     path: "/admin/add-product",
+    activeAddProduct: true, // to add the active class to the link with handlebars
+    formsCSS: true, // to add the form styles with handlebars
+    productCSS: true, // to add the product styles with handlebars
   });
 });
 

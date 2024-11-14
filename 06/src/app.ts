@@ -14,7 +14,13 @@ dynamic templates and where to find the templates */
 // app.set("view engine", "pug");
 
 /* handlebars */
-app.engine("hbs", expressHbs());
+app.engine(
+  "hbs",
+  expressHbs({
+    layoutsDir: "src/views/layouts/",
+    defaultLayout: "main-layout.hbs",
+  })
+);
 app.set("view engine", "hbs");
 
 app.set("views", path.join(__dirname, "../src/views"));
@@ -36,7 +42,7 @@ app.use((req, res) => {
   // res.status(404).sendFile(path.join(__dirname, "../src", "views", "404.html"));
 
   // pug
-  res.render("404", { pageTitle: "Page Not Found" });
+  res.status(404).render("404", { pageTitle: "Page Not Found" });
 });
 
 app.listen(3000, () => {
