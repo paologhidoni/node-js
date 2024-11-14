@@ -14,8 +14,8 @@ dynamic templates and where to find the templates */
 // app.set("view engine", "pug");
 
 /* handlebars */
-app.engine("handlebars", expressHbs());
-app.set("view engine", "handlebars");
+app.engine("hbs", expressHbs());
+app.set("view engine", "hbs");
 
 app.set("views", path.join(__dirname, "../src/views"));
 
