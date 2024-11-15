@@ -1,4 +1,5 @@
 import express, { Application } from "express";
+import { engine as expressHbs } from "express-handlebars";
 import path from "path";
 import bodyParser from "body-parser";
 import { adminRoutes } from "./routes/admin";
@@ -8,7 +9,20 @@ const app: Application = express();
 
 /* tell express which engine we want to use to compile
 dynamic templates and where to find the templates */
-app.set("view engine", "pug");
+
+/* pug */
+// app.set("view engine", "pug");
+
+/* handlebars */
+app.engine(
+  "hbs",
+  expressHbs({
+    layoutsDir: "src/views/layouts/",
+    defaultLayout: "main-layout.hbs",
+  })
+);
+app.set("view engine", "hbs");
+
 app.set("views", path.join(__dirname, "../src/views"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -28,7 +42,7 @@ app.use((req, res) => {
   // res.status(404).sendFile(path.join(__dirname, "../src", "views", "404.html"));
 
   // pug
-  res.render("404", { pageTitle: "Page Not Found" });
+  res.status(404).render("404", { pageTitle: "Page Not Found" });
 });
 
 app.listen(3000, () => {
