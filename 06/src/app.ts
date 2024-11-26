@@ -1,5 +1,4 @@
 import express, { Application } from "express";
-import { engine as expressHbs } from "express-handlebars";
 import path from "path";
 import bodyParser from "body-parser";
 import { adminRoutes } from "./routes/admin";
@@ -9,20 +8,6 @@ const app: Application = express();
 
 /* tell express which engine we want to use to compile
 dynamic templates and where to find the templates */
-
-/* pug */
-// app.set("view engine", "pug");
-
-/* handlebars */
-// app.engine(
-//   "hbs",
-//   expressHbs({
-//     layoutsDir: "src/views/layouts/",
-//     defaultLayout: "main-layout.hbs",
-//   })
-// );
-// app.set("view engine", "hbs");
-
 /* ejs */
 app.set("view engine", "ejs");
 
