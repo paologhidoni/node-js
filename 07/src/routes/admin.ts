@@ -9,4 +9,4 @@ adminRoutes.get("/add-product", getAddProduct);
 // /admin/add-product => POST
 adminRoutes.post("/add-product", postAddProduct);
 
-export { adminRoutes };
+export default adminRoutes;

@@ -1,9 +1,9 @@
 import express, { Application } from "express";
-import { engine as expressHbs } from "express-handlebars";
 import path from "path";
 import bodyParser from "body-parser";
-import { adminRoutes } from "./routes/admin";
+import adminRoutes from "./routes/admin";
 import shopRoutes from "./routes/shop";
+import { getNotFound } from "./controllers/error";
 
 const app: Application = express();
 
@@ -41,12 +41,7 @@ app.use("/admin", adminRoutes);
 // Shop routes
 app.use(shopRoutes);
 // Error page
-app.use((req, res) => {
-  // res.status(404).sendFile(path.join(__dirname, "../src", "views", "404.html"));
-
-  // pug
-  res.status(404).render("404", { pageTitle: "Page Not Found", path: "" });
-});
+app.use(getNotFound);
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
