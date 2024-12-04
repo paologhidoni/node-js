@@ -41,7 +41,6 @@ bower_components/
 
 # Gatsby files
 .cache/
-public/
 
 # Expo files
 .expo/
