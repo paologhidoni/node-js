@@ -1,10 +1,10 @@
 import express from "express";
 import {
-  getAdminProducts,
   getAddProduct,
-  getEditProduct,
   postAddProduct,
-} from "../controllers/products";
+  getEditProduct,
+  getAdminProducts,
+} from "../controllers/admin";
 
 const adminRoutes = express.Router();
 
