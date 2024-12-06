@@ -5,11 +5,22 @@ const p = path.join(__dirname, "../../src/data", "products.json");
 
 // Ensure you're using fs.promises to avoid manually wrapping with Promise
 export default class Product {
-  constructor(t: string) {
-    this.title = t;
+  constructor(
+    title: string,
+    imageUrl: string,
+    description: string,
+    price: number
+  ) {
+    this.title = title;
+    this.imageUrl = imageUrl;
+    this.description = description;
+    this.price = price;
   }
 
   title;
+  imageUrl;
+  description;
+  price;
 
   // Static method to read the products from the JSON file
   static async readProducts(): Promise<Record<string, any>[]> {
@@ -25,6 +36,7 @@ export default class Product {
   async save() {
     try {
       const products = await Product.readProducts();
+      console.log(this, "THIS *********");
       products.push(this);
 
       // Write the updated products list back to the file

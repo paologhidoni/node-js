@@ -12,7 +12,7 @@ const shopRoutes = express.Router();
 shopRoutes.get("/", getIndex);
 
 // /products => GET
-shopRoutes.get("/products", getProducts);
+shopRoutes.get("/products-list", getProducts);
 
 // /cart => GET
 shopRoutes.get("/cart", getCart);

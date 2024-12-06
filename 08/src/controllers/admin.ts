@@ -18,7 +18,13 @@ export const postAddProduct = async (
   res: Response,
   next: NextFunction
 ) => {
-  const product = new Product(req.body.title);
+  const product = new Product(
+    req.body.title,
+    req.body.imageUrl,
+    req.body.description,
+    req.body.price
+  );
+  console.log(product, "PRODUCT *********");
   await product.save();
   res.redirect("/");
 };
