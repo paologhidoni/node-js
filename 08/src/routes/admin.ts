@@ -4,6 +4,7 @@ import {
   postAddProduct,
   getEditProduct,
   getAdminProducts,
+  getOrders,
 } from "../controllers/admin";
 
 const adminRoutes = express.Router();
