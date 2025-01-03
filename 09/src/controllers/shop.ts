@@ -28,7 +28,7 @@ export const getProducts = async (
   res.render("shop/products-list", {
     pageTitle: "Shop",
     prods: products,
-    path: "/products-list",
+    path: "/products",
   });
 };
 
