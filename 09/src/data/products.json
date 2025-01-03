@@ -3,7 +3,8 @@
     "title": "Gino",
     "imageUrl": "https://s.hdnux.com/photos/01/02/02/17/17310692/7/1200x0.jpg",
     "description": "Gino the best!!!!!",
-    "price": "1000.00"
+    "price": "1000.00",
+    "prodId": "0.25598679001405533"
   },
   {
     "title": "",
@@ -34,5 +35,26 @@
     "imageUrl": "",
     "description": "",
     "price": ""
+  },
+  {
+    "title": "Ginhouse",
+    "imageUrl": "",
+    "description": "testington",
+    "price": "11",
+    "prodId": "test"
+  },
+  {
+    "title": "323232",
+    "imageUrl": "",
+    "description": "",
+    "price": "",
+    "prodId": "test"
+  },
+  {
+    "title": "Diorama",
+    "imageUrl": "",
+    "description": "",
+    "price": "",
+    "prodId": "0.1294301402027238"
   }
 ]

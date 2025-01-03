@@ -32,6 +32,20 @@ export const getProducts = async (
   });
 };
 
+export const getProduct = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const product = await Product.findById(req.params.productId);
+
+  res.render("shop/product-detail", {
+    pageTitle: product?.title,
+    prod: product,
+    path: "/product-detail",
+  });
+};
+
 export const getCart = async (
   req: Request,
   res: Response,

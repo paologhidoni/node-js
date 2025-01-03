@@ -22,7 +22,8 @@ export const postAddProduct = async (
     req.body.title,
     req.body.imageUrl,
     req.body.description,
-    req.body.price
+    req.body.price,
+    Math.random().toString()
   );
   console.log(product, "PRODUCT *********");
   await product.save();

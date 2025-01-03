@@ -2,6 +2,7 @@ import express from "express";
 import {
   getIndex,
   getProducts,
+  getProduct,
   getCart,
   getCheckout,
   getOrders,
@@ -14,6 +15,9 @@ shopRoutes.get("/", getIndex);
 
 // /products => GET
 shopRoutes.get("/products", getProducts);
+
+// /products/:productId => GET
+shopRoutes.get("/products/:productId", getProduct);
 
 // /cart => GET
 shopRoutes.get("/cart", getCart);

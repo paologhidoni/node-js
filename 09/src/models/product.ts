@@ -9,18 +9,21 @@ export default class Product {
     title: string,
     imageUrl: string,
     description: string,
-    price: number
+    price: number,
+    prodId: string
   ) {
     this.title = title;
     this.imageUrl = imageUrl;
     this.description = description;
     this.price = price;
+    this.prodId = prodId;
   }
 
   title;
   imageUrl;
   description;
   price;
+  prodId;
 
   // Static method to read the products from the JSON file
   static async readProducts(): Promise<Record<string, any>[]> {
@@ -55,5 +58,12 @@ export default class Product {
   // Static method to fetch all products
   static async fetchAll(): Promise<Record<string, any>[]> {
     return await this.readProducts();
+  }
+
+  static async findById(id: string) {
+    const products = await Product.fetchAll();
+    const product = products.find((el) => el.prodId === id);
+
+    return product;
   }
 }
