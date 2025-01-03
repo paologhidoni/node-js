@@ -53,3 +53,17 @@ export const getCheckout = async (
     path: "/checkout",
   });
 };
+
+export const getOrders = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const orders: [] = [];
+
+  res.render("shop/orders", {
+    pageTitle: "Your Orders",
+    orders: orders,
+    path: "/orders",
+  });
+};

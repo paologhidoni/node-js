@@ -4,6 +4,7 @@ import {
   getProducts,
   getCart,
   getCheckout,
+  getOrders,
 } from "../controllers/shop";
 
 const shopRoutes = express.Router();
@@ -19,5 +20,8 @@ shopRoutes.get("/cart", getCart);
 
 // checkout => GET
 shopRoutes.get("/checkout", getCheckout);
+
+// orders => GET
+shopRoutes.get("/orders", getOrders);
 
 export default shopRoutes;
